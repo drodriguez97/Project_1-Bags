@@ -46,13 +46,13 @@ public interface BagInterface<T>
    public T[] toArray();
 
    /** To-do: Create union method */
-
+    public T union(T bagUnion);
 
    /** To-do: Create intersection method */
-
+    public T intersection(T bagIntersection);
 
    /** To-do: Create difference method */
-
+    public T difference(T bagDifference);
 
 
 
