@@ -2,10 +2,13 @@
 
 public class LinkedBag<T> implements BagInterface<T> {
 
+    private Node firstNode;     // Reference to first node
+    private int numEntries;     // number of nodes in linked chain
 
+    // Default constructor
     public LinkedBag() {
-
-        
+        firstNode = null;
+        numEntries = 0;   
     }
 
     @Override
@@ -22,7 +25,7 @@ public class LinkedBag<T> implements BagInterface<T> {
 
     @Override
     public boolean add(T newEntry) {
-        
+
         return false;
     }
 
@@ -80,6 +83,24 @@ public class LinkedBag<T> implements BagInterface<T> {
         return null;
     }
 
+    
+    // Member inner class Node for linked data
+    private class Node {
+        
+        private T data;             // Data of the node
+        private Node next;          // Reference to the next Node in chain
 
+        // Default constructor
+        private Node(T nodeData) {
+            this(nodeData, null);   // Passes params to full contructor 
+        }
+
+        // More complete constructor that sets Node data
+        private Node(T nodeData, Node nextNode) {
+            data = nodeData;
+            next = nextNode;
+        }
+
+    }
     
 }
