@@ -12,13 +12,13 @@ public class LinkedBag<T> implements BagInterface<T> {
     }
 
     
-    /** 
-     * @return int
-     */
+    /** Gets the number of entries in the bag.
+     * @return int The integer number of entries in the bag.
+     */ 
     @Override
     public int getCurrentSize() {
-        
-        return 0;
+
+        return numEntries;
     }
 
     
