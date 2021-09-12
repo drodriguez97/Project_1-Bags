@@ -11,30 +11,58 @@ public class LinkedBag<T> implements BagInterface<T> {
         numEntries = 0;   
     }
 
+    
+    /** 
+     * @return int
+     */
     @Override
     public int getCurrentSize() {
         
         return 0;
     }
 
+    
+    /** 
+     * @return boolean
+     */
     @Override
     public boolean isEmpty() {
         
         return false;
     }
 
+    
+    /** Adds new entry to the linked chain.
+     * @param newEntry The object being added as a new entry.
+     * @return boolean True if add was successful.
+     */
     @Override
     public boolean add(T newEntry) {
 
-        return false;
+        Node newNode = new Node(newEntry);  // New entry created
+        newNode.next = firstNode;           // New Node referrences chain
+        
+        firstNode = newNode;                // New Node is the first Node
+        numEntries++;                       // Increment number of entries
+
+        return true;
     }
 
+    
+    /** 
+     * @return T
+     */
     @Override
     public T remove() {
         
         return null;
     }
 
+    
+    /** 
+     * @param anEntry
+     * @return boolean
+     */
     @Override
     public boolean remove(T anEntry) {
         
@@ -47,36 +75,65 @@ public class LinkedBag<T> implements BagInterface<T> {
         
     }
 
+    
+    /** 
+     * @param anEntry
+     * @return int
+     */
     @Override
     public int getFrequencyOf(T anEntry) {
         
         return 0;
     }
 
+    
+    /** 
+     * @param anEntry
+     * @return boolean
+     */
     @Override
     public boolean contains(T anEntry) {
         
         return false;
     }
 
+    
+    /** 
+     * @return T[]
+     */
     @Override
     public T[] toArray() {
         
         return null;
     }
 
+    
+    /** 
+     * @param bagUnion
+     * @return T
+     */
     @Override
     public T union(T bagUnion) {
         
         return null;
     }
 
+    
+    /** 
+     * @param bagIntersection
+     * @return T
+     */
     @Override
     public T intersection(T bagIntersection) {
         
         return null;
     }
 
+    
+    /** 
+     * @param bagDifference
+     * @return T
+     */
     @Override
     public T difference(T bagDifference) {
         
