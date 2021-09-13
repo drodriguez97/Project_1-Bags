@@ -59,7 +59,7 @@ public class LinkedBag<T> implements BagInterface<T> {
 
             Node removedNode = firstNode;
             firstNode = removedNode.next;
-
+            numEntries--;
         }
         return null;
     }
@@ -101,32 +101,54 @@ public class LinkedBag<T> implements BagInterface<T> {
         return true;
     }
 
+    /**
+     * Removes all entries from bag.
+     */
     @Override
     public void clear() {
         
+        while (!isEmpty()) {
+            remove();
+        }
         
     }
 
     
-    /** 
-     * @param anEntry
-     * @return int
+    /** Counts the number of times the given entry appears in bag.
+     * @param anEntry The entry that will be counted.
+     * @return int The number of time given entry is present in bag.
      */
     @Override
     public int getFrequencyOf(T anEntry) {
-        
-        return 0;
+
+        int frequency = 0;
+        int index = 0;
+        Node currentNode = firstNode;
+
+        while ((index < numEntries) && (currentNode != null)) {
+            if (anEntry.equals(currentNode.data)) {
+                frequency++;
+            }
+
+            index++;
+            currentNode = currentNode.next;
+        }
+        return frequency;
     }
 
     
-    /** 
-     * @param anEntry
-     * @return boolean
+    /** Checks whether bag contains an instance of given entry.
+     * @param anEntry The given entry that will be checked for.
+     * @return boolean True if the given entry is found, or false otherwise.
      */
     @Override
     public boolean contains(T anEntry) {
         
-        return false;
+        if (this.getFrequencyOf(anEntry) > 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     
