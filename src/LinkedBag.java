@@ -65,14 +65,40 @@ public class LinkedBag<T> implements BagInterface<T> {
     }
 
     
-    /** 
-     * @param anEntry
-     * @return boolean
+    /** Removes one occurence of a given entry from this bag.
+     * @param anEntry The entry to be removed.
+     * @return boolean True if entry was removed, or false otherwise.
      */
     @Override
     public boolean remove(T anEntry) {
-        
-        return false;
+        Node nodePrevious = null;
+        Node currentNode = firstNode;
+        Node tempNode = null;
+
+        int index = 0;
+
+        while((index < numEntries) && (currentNode != null)) {
+            if (currentNode.data == anEntry) {
+                if (nodePrevious == null) {
+                    firstNode = currentNode.next;
+                    numEntries--;
+                    return true;
+
+                } else {
+                    tempNode = currentNode;
+                    nodePrevious.next = tempNode.next;
+                    numEntries--;
+                     return true;
+                }
+                
+            } else {
+                nodePrevious = currentNode;
+                currentNode = currentNode.next;
+                index++;
+            }
+
+        }
+        return true;
     }
 
     @Override
