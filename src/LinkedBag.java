@@ -98,13 +98,24 @@ public class LinkedBag<T> implements BagInterface<T> {
     }
 
     
-    /** 
-     * @return T[]
+    /** Gets all the entries that are in this bag.
+     * @return T[] A new array that contains all the entries of this bag.
      */
     @Override
     public T[] toArray() {
+
+        @SuppressWarnings("unchecked")   
+        T[] bagArray = (T[])new Object[numEntries];
+
+        int index = 0;
+        Node currentNode = firstNode;
+        while((index < numEntries) && (currentNode != null )) {
+            bagArray[index] = currentNode.data;
+            index++;
+            currentNode = currentNode.next;
+        }
         
-        return null;
+        return bagArray;
     }
 
     
