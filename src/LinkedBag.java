@@ -22,13 +22,13 @@ public class LinkedBag<T> implements BagInterface<T> {
     }
 
     
-    /** 
-     * @return boolean
+    /** Determines whether this bag is empty.
+     * @return boolean True if the bag is empty, false if not.
      */
     @Override
     public boolean isEmpty() {
         
-        return false;
+        return numEntries == 0;
     }
 
     
@@ -49,12 +49,18 @@ public class LinkedBag<T> implements BagInterface<T> {
     }
 
     
-    /** 
-     * @return T
+    /** Removes the first Node in the chain, if possible.
+     * @return T Either the removed entry, if the removal was
+     *           sucessful, or null.
      */
     @Override
     public T remove() {
-        
+        if (firstNode != null) {
+
+            Node removedNode = firstNode;
+            firstNode = removedNode.next;
+
+        }
         return null;
     }
 
