@@ -177,6 +177,10 @@ public class LinkedBag<T> implements BagInterface<T> {
      * @param bagUnion
      * @return T
      */
+    /**
+     * To-do: union method
+     * Member: Priscilla
+     */
     @Override
     public T union(T bagUnion) {
         
@@ -188,6 +192,10 @@ public class LinkedBag<T> implements BagInterface<T> {
      * @param bagIntersection
      * @return T
      */
+    /**
+     * To-do: intersection method
+     * Member:
+     */
     @Override
     public T intersection(T bagIntersection) {
         
@@ -198,6 +206,10 @@ public class LinkedBag<T> implements BagInterface<T> {
     /** 
      * @param bagDifference
      * @return T
+     */
+    /**
+     * To-do: difference method
+     * Member: 
      */
     @Override
     public T difference(T bagDifference) {
