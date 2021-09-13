@@ -51,7 +51,7 @@ public class LinkedBag<T> implements BagInterface<T> {
     
     /** Removes the first Node in the chain, if possible.
      * @return T Either the removed entry, if the removal was
-     *           sucessful, or null.
+     *           sucessful, or null if it was not.
      */
     @Override
     public T remove() {
