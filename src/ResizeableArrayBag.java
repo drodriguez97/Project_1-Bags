@@ -62,13 +62,23 @@ public class ResizeableArrayBag<T> implements BagInterface<T> {
 
     @Override
     public T[] toArray() {
-        
+
         return null;
     }
 
     @Override
     public T union(T bagUnion) {
+        BagInterface T bagUnion = new ResizeableArrayBag () ;
+        ResizeableArrayBag T otherbag = (ResizeableArrayBag T) otherbag ;
+
+        int count ; 
+        for(count = 0 ; count < numberOfEnteries ; count++)
+            bagUnion.add(bag[count]) ;
         
+        for(count  = 0 ; index < otherBag.getCurrentSize() ; index++)
+            bagUnion.add(otherBag[index]) ;
+
+        return bagUnion ;
         return null;
     }
 
