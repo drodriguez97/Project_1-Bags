@@ -165,13 +165,23 @@ public class ResizeableArrayBag<T> implements BagInterface<T> {
         
         return null;
     }
-
+    
+    // difference method: Daniel
     @Override
-    public T difference(T bagDifference) {
-        
-        return null;
+    public BagInterface<T> difference(BagInterface<T> otherBag) {
+        BagInterface<T> result = new ResizeableArrayBag<>();
+        T[] mine = this.toArray();
+        for (T elem : mine) {
+            result.add(elem);
+        }
+        T[] others = otherBag.toArray();
+        for (T elem : others) {
+            if (result.contains(elem)) {
+                result.remove(elem);
+            }
+        }
+        return result;
     }
-
     
 
 }
