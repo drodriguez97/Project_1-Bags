@@ -22,13 +22,13 @@ public class LinkedBag<T> implements BagInterface<T> {
     }
 
     
-    /** 
-     * @return boolean
+    /** Determines whether this bag is empty.
+     * @return boolean True if the bag is empty, false if not.
      */
     @Override
     public boolean isEmpty() {
         
-        return false;
+        return numEntries == 0;
     }
 
     
@@ -49,68 +49,137 @@ public class LinkedBag<T> implements BagInterface<T> {
     }
 
     
-    /** 
-     * @return T
+    /** Removes the first Node in the chain, if possible.
+     * @return T Either the removed entry, if the removal was
+     *           sucessful, or null if it was not.
      */
     @Override
     public T remove() {
-        
+        if (firstNode != null) {
+
+            Node removedNode = firstNode;
+            firstNode = removedNode.next;
+            numEntries--;
+        }
         return null;
     }
 
     
-    /** 
-     * @param anEntry
-     * @return boolean
+    /** Removes one occurence of a given entry from this bag.
+     * @param anEntry The entry to be removed.
+     * @return boolean True if entry was removed, or false otherwise.
      */
     @Override
     public boolean remove(T anEntry) {
-        
-        return false;
+        Node nodePrevious = null;
+        Node currentNode = firstNode;
+        Node tempNode = null;
+
+        int index = 0;
+
+        while((index < numEntries) && (currentNode != null)) {
+            if (currentNode.data == anEntry) {
+                if (nodePrevious == null) {
+                    firstNode = currentNode.next;
+                    numEntries--;
+                    return true;
+
+                } else {
+                    tempNode = currentNode;
+                    nodePrevious.next = tempNode.next;
+                    numEntries--;
+                     return true;
+                }
+                
+            } else {
+                nodePrevious = currentNode;
+                currentNode = currentNode.next;
+                index++;
+            }
+
+        }
+        return true;
     }
 
+    /**
+     * Removes all entries from bag.
+     */
     @Override
     public void clear() {
         
+        while (!isEmpty()) {
+            remove();
+        }
         
     }
 
     
-    /** 
-     * @param anEntry
-     * @return int
+    /** Counts the number of times the given entry appears in bag.
+     * @param anEntry The entry that will be counted.
+     * @return int The number of time given entry is present in bag.
      */
     @Override
     public int getFrequencyOf(T anEntry) {
-        
-        return 0;
+
+        int frequency = 0;
+        int index = 0;
+        Node currentNode = firstNode;
+
+        while ((index < numEntries) && (currentNode != null)) {
+            if (anEntry.equals(currentNode.data)) {
+                frequency++;
+            }
+
+            index++;
+            currentNode = currentNode.next;
+        }
+        return frequency;
     }
 
     
-    /** 
-     * @param anEntry
-     * @return boolean
+    /** Checks whether bag contains an instance of given entry.
+     * @param anEntry The given entry that will be checked for.
+     * @return boolean True if the given entry is found, or false otherwise.
      */
     @Override
     public boolean contains(T anEntry) {
         
-        return false;
+        if (this.getFrequencyOf(anEntry) > 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     
-    /** 
-     * @return T[]
+    /** Gets all the entries that are in this bag.
+     * @return T[] A new array that contains all the entries of this bag.
      */
     @Override
     public T[] toArray() {
+
+        @SuppressWarnings("unchecked")   
+        T[] bagArray = (T[])new Object[numEntries];
+
+        int index = 0;
+        Node currentNode = firstNode;
+        while((index < numEntries) && (currentNode != null )) {
+            bagArray[index] = currentNode.data;
+            index++;
+            currentNode = currentNode.next;
+        }
         
-        return null;
+        return bagArray;
     }
 
     
     /** 
      * @param bagUnion
      * @return T
+     */
+    /**
+     * To-do: union method
+     * Member: Priscilla
      */
     @Override
     public T union(T bagUnion) {
@@ -123,6 +192,10 @@ public class LinkedBag<T> implements BagInterface<T> {
      * @param bagIntersection
      * @return T
      */
+    /**
+     * To-do: intersection method
+     * Member:
+     */
     @Override
     public T intersection(T bagIntersection) {
         
@@ -133,6 +206,10 @@ public class LinkedBag<T> implements BagInterface<T> {
     /** 
      * @param bagDifference
      * @return T
+     */
+    /**
+     * To-do: difference method
+     * Member: 
      */
     @Override
     public T difference(T bagDifference) {

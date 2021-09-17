@@ -87,6 +87,12 @@ public class ResizeableArrayBag<T> implements BagInterface<T> {
             itemArray[index] = null;
         numberOfItems = 0;
     }
+  
+    // To-do:
+    @Override
+    public T remove() {
+        return null;
+    }
 
     public boolean remove(T anItem) {
         int k = 0;
@@ -135,57 +141,37 @@ public class ResizeableArrayBag<T> implements BagInterface<T> {
             result[index] = itemArray[index];
         return result;
     }
-
+    
+    // union method: Priscilla
     @Override
-    public BagInterface<T> union(BagInterface<T> otherBag) {
-        BagInterface<T> result = new ResizeableArrayBag<>();
-        T[] mine = this.toArray();
-        for (T elem : mine) {
-            result.add(elem);
-        }
-        T[] others = otherBag.toArray();
-        for (T elem : others) {
-            result.add(elem);
-        }
-        return result;
-    }
+    public T union(T bagUnion) {
+        BagInterface T bagUnion = new ResizeableArrayBag () ;
+        ResizeableArrayBag T otherbag = (ResizeableArrayBag T) otherbag ;
 
-    @Override
-    public BagInterface<T> intersection(BagInterface<T> otherBag) {
-        BagInterface<T> result = new ResizeableArrayBag<>();
-        BagInterface<T> finalResult = new ResizeableArrayBag<>();
-        T[] mine = this.toArray();
-        for (T elem : mine) {
-            result.add(elem);
-        }
-        T[] others = otherBag.toArray();
-        for (T elem : others) {
-            if (result.contains(elem)) {
-                finalResult.add(elem);
-            }
-        }
-        return finalResult;
-    }
+        int count ; 
+        for(count = 0 ; count < numberOfEnteries ; count++)
+            bagUnion.add(bag[count]) ;
+        
+        for(count  = 0 ; index < otherBag.getCurrentSize() ; index++)
+            bagUnion.add(otherBag[index]) ;
 
-    @Override
-    public BagInterface<T> difference(BagInterface<T> otherBag) {
-        BagInterface<T> result = new ResizeableArrayBag<>();
-        T[] mine = this.toArray();
-        for (T elem : mine) {
-            result.add(elem);
-        }
-        T[] others = otherBag.toArray();
-        for (T elem : others) {
-            if (result.contains(elem)) {
-                result.remove(elem);
-            }
-        }
-        return result;
-    }
-
-    @Override
-    public T remove() {
+        return bagUnion ;
         return null;
     }
+
+
+    @Override
+    public T intersection(T bagIntersection) {
+        
+        return null;
+    }
+
+    @Override
+    public T difference(T bagDifference) {
+        
+        return null;
+    }
+
+    
 
 }
