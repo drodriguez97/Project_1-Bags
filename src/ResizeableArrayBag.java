@@ -142,9 +142,14 @@ public class ResizeableArrayBag<T> implements BagInterface<T> {
         return result;
     }
     
-    // union method: Priscilla
+    
+    /**
+     * union method: Priscilla
+     */
+    //Changed this method header, should be correct now
     @Override
-    public T union(T bagUnion) {
+    public BagInterface<T> union(BagInterface<T> bagUnion) {
+
         BagInterface T bagUnion = new ResizeableArrayBag () ;
         ResizeableArrayBag T otherbag = (ResizeableArrayBag T) otherbag ;
 
@@ -155,20 +160,25 @@ public class ResizeableArrayBag<T> implements BagInterface<T> {
         for(count  = 0 ; index < otherBag.getCurrentSize() ; index++)
             bagUnion.add(otherBag[index]) ;
 
-        return bagUnion ;
-        return null;
+        return bagUnion;
     }
 
-
+    /**
+     * intersection method: John
+     */
     @Override
-    public T intersection(T bagIntersection) {
+    public BagInterface<T> intersection(BagInterface<T> otherBag) {
         
         return null;
     }
     
-    // difference method: Daniel
+    
+    /**
+     * difference method: Daniel
+     */
     @Override
     public BagInterface<T> difference(BagInterface<T> otherBag) {
+    //public T difference(T otherBag) {
         BagInterface<T> result = new ResizeableArrayBag<>();
         T[] mine = this.toArray();
         for (T elem : mine) {
@@ -182,6 +192,6 @@ public class ResizeableArrayBag<T> implements BagInterface<T> {
         }
         return result;
     }
-    
+
 
 }
