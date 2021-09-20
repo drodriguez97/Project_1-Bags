@@ -1,5 +1,5 @@
 # Project_1-Bags
-CS 2400 Project 1 - Bags John, Daniel, Priscilla
+CS 2400 Project 1 - Bags John, Daniel, Priscilla, Md Islam
 
 (Temporary)
 To-do:
@@ -14,7 +14,9 @@ LinkedBag.java (without three task methods) - (John)
 
 union method for both ResizeableArrayBag.java and LinkedBag.java - (Priscilla)
 
-intersection method for both ResizeableArrayBag.java and LinkedBag.java - (John)
+intersection method<br />
+    for ResizeableArrayBag.java (John) <br />
+    for LinkedBag.java (Md Islam)
 
 difference method for both ResizeableArrayBag.java and LinkedBag.java - (Daniel)
 
