@@ -3,7 +3,7 @@ import java.util.*;
 public class ResizeableArrayBag<T> implements BagInterface<T> {
     private T[] itemArray;
 
-    private static final int DEFAULT_CAPACITY = 4;
+    private static final int DEFAULT_CAPACITY = 25;
     private int myCapacity;
     private int numberOfItems;
 
@@ -146,7 +146,7 @@ public class ResizeableArrayBag<T> implements BagInterface<T> {
     /**
      * union method: Priscilla
      */
-    //Changed this method header, should be correct now
+    // Needs fixing, many syntax errors 
     @Override
     public BagInterface<T> union(BagInterface<T> bagUnion) {
 
@@ -168,8 +168,31 @@ public class ResizeableArrayBag<T> implements BagInterface<T> {
      */
     @Override
     public BagInterface<T> intersection(BagInterface<T> otherBag) {
+        BagInterface<T> result = new ResizeableArrayBag<>();
+
+        if (this.getCurrentSize() == 0 || otherBag.getCurrentSize() == 0) {
+            return null;
+        }
+
+        T[] leftArray = this.toArray();
+        T[] rightArray = otherBag.toArray();
         
-        return null;
+        T element;
+        //boolean found = false;
+
+        for(int i = 0; i < leftArray.length; i++) {
+            element = leftArray[i];
+            for (int j = 0; j < rightArray.length; j++) {
+                if (element == rightArray[j]) {
+                    result.add(element);
+                    rightArray[j] = null;
+                    break;
+                }
+            }
+            
+        }
+        
+        return result;
     }
     
     
@@ -178,7 +201,6 @@ public class ResizeableArrayBag<T> implements BagInterface<T> {
      */
     @Override
     public BagInterface<T> difference(BagInterface<T> otherBag) {
-    //public T difference(T otherBag) {
         BagInterface<T> result = new ResizeableArrayBag<>();
         T[] mine = this.toArray();
         for (T elem : mine) {
