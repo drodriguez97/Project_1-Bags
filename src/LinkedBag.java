@@ -194,10 +194,11 @@ public class LinkedBag<T> implements BagInterface<T> {
      */
 
     /**
-     * intersection method: John
+     * intersection method: Md Islam
      */
     @Override
     public BagInterface<T> intersection(BagInterface<T> otherBag) {
+        
         
         return null;
     }
