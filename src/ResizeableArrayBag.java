@@ -36,15 +36,27 @@ public class ResizeableArrayBag<T> implements BagInterface<T> {
 
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getCurrentSize() {
         return numberOfItems;
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getCapacity() {
         return myCapacity;
 
     }
 
+    
+    /** 
+     * @param newCapacity
+     */
     public void resize(int newCapacity) {
         if (myCapacity > newCapacity) {
             return;
@@ -54,10 +66,18 @@ public class ResizeableArrayBag<T> implements BagInterface<T> {
         }
     }
 
+    
+    /** 
+     * @return boolean
+     */
     public boolean isEmpty() {
         return numberOfItems == 0;
     }
 
+    
+    /** 
+     * @return boolean
+     */
     public boolean isFull() {
         if (myCapacity == numberOfItems) {
             return true;
@@ -65,6 +85,11 @@ public class ResizeableArrayBag<T> implements BagInterface<T> {
         return false;
     }
 
+    
+    /** 
+     * @param newItem
+     * @return boolean
+     */
     public boolean add(T newItem) {
         if (isFull()) {
             resize(2 * myCapacity);
@@ -88,12 +113,21 @@ public class ResizeableArrayBag<T> implements BagInterface<T> {
         numberOfItems = 0;
     }
   
+    
+    /** 
+     * @return T
+     */
     // To-do:
     @Override
     public T remove() {
         return null;
     }
 
+    
+    /** 
+     * @param anItem
+     * @return boolean
+     */
     public boolean remove(T anItem) {
         int k = 0;
         while (k < numberOfItems) {
@@ -110,6 +144,11 @@ public class ResizeableArrayBag<T> implements BagInterface<T> {
         return false;
     }
 
+    
+    /** 
+     * @param anItem
+     * @return boolean
+     */
     public boolean contains(T anItem) {
         if (isEmpty())
             return false;
@@ -124,6 +163,11 @@ public class ResizeableArrayBag<T> implements BagInterface<T> {
         return false;
     }
 
+    
+    /** 
+     * @param anItem
+     * @return int
+     */
     public int getFrequencyOf(T anItem) {
         int counter = 0;
         for (int index = 0; index < numberOfItems; index++) {
@@ -134,6 +178,10 @@ public class ResizeableArrayBag<T> implements BagInterface<T> {
         return counter;
     }
 
+    
+    /** 
+     * @return T[]
+     */
     public T[] toArray() {
         @SuppressWarnings("unchecked")
         T[] result = (T[]) new Object[numberOfItems];
