@@ -20,9 +20,9 @@ intersection method<br />
 
 difference method for both ResizeableArrayBag.java and LinkedBag.java - (Daniel)
 
-ArrayBagTest.java (to test the three task methods) (Daniel)
+ArrayBagTest.java (to test the three task methods) (All members)
 
-LinkedBagTest.java (to test the three task methods) - (Priscilla)
+LinkedBagTest.java (to test the three task methods) - (All members)
 
 Big O notation (for each method, in best case and worst case, with explanations) - (Name goes here)
 
