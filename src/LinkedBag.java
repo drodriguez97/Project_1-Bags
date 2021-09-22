@@ -1,4 +1,4 @@
-/** An implementation of the ADT bag using a linked chain */
+/* An implementation of the ADT bag using a linked chain */
 
 public class LinkedBag<T> implements BagInterface<T> {
 
@@ -194,13 +194,34 @@ public class LinkedBag<T> implements BagInterface<T> {
      */
 
     /**
-     * intersection method: Md Islam
+     * intersection method: John
      */
     @Override
     public BagInterface<T> intersection(BagInterface<T> otherBag) {
+
+        BagInterface<T> result = new LinkedBag<T>();
+
+        if (this.getCurrentSize() == 0 || otherBag.getCurrentSize() == 0) {
+            return null;
+        }
+
+        T[] leftLinked = this.toArray();
+        T[] rightLinked = otherBag.toArray();
         
+        T element;
+
+        for(int i = 0; i < leftLinked.length; i++) {
+            element = leftLinked[i];
+            for (int j = 0; j < rightLinked.length; j++) {
+                if (element == rightLinked[j]) {
+                    result.add(element);
+                    rightLinked[j] = null;
+                    break;
+                }
+            }
+        }
         
-        return null;
+        return result;
     }
 
     
