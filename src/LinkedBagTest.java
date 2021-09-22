@@ -10,9 +10,23 @@ public class LinkedBagTest { // Question: LinkedBagTest will implement BagInterf
     public static void main(String[] args) {
 
         // Testing union method : Priscilla
-        
+       
+       // creat two bags //
         BagInterface bag1 = new LinkedBagTest(a);
         BagInterface bag2 = new LinkedBagTest(b);
+        
+       // add items to bag 
+        bag1.add("a");
+        bag1.add("b");
+        bag1.add("c");
+
+        bag2.add("b");
+        bag2.add("b");
+        bag2.add("d");
+        bag2.add("e");
+    // union of bag 1 and bag 2 and display union bag //
+    BagInterface<String> everything = bag1.union(bag2) ;
+    displayBag(everything);
 
         // Testing intersection method : John
 
