@@ -197,16 +197,20 @@ public class ResizeableArrayBag<T> implements BagInterface<T> {
     // Needs fixing, many syntax errors 
     @Override
     public BagInterface<T> union(BagInterface<T> otherBag) {
+        // create union bag //
+        BagInterface<T> bagUnion = new ResizeableArrayBag<>() ;
 
-        BagInterface<T> bagUnion = new ResizeableArrayBag () ;
-        ResizeableArrayBag<T> anotherBag = (ResizeableArrayBag<T>) otherbag ;
-
+       // declare the two bags that will union //
         int count ; 
+        T[] bagTs = this.toArray();
+        T[] bagOther = otherBag.toArray();
+
+        // union of first bag "bagTs"
         for(count = 0 ; count < numberOfItems ; count++)
-            bagUnion.add(bag[count]) ;
-        
-        for(count = 0 ; count < anotherBag.getCurrentSize() ; count++)
-            bagUnion.add(anotherBag.bag[count]) ;
+            bagUnion.add(bagTs[count]) ;
+        //union of second bag "otherBag" //
+        for(count = 0 ; count < otherBag.getCurrentSize() ; count++)
+            bagUnion.add(bagOther[count]) ;
 
         return bagUnion;
     }
