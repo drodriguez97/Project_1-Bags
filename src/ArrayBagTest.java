@@ -5,7 +5,22 @@ public class ArrayBagTest {
         
         // Testing union method : Priscilla
 
-        
+        /* 
+	BagInterface<String> bag1 = new ResizeableArrayBag<>();
+        BagInterface<String> bag2 = new ResizeableArrayBag<>();
+      
+              bag1.add("a");
+              bag1.add("b");
+              bag1.add("c");
+      
+              bag2.add("b");
+              bag2.add("b");
+              bag2.add("d");
+              bag2.add("f");
+	      
+	BagInterface<String> everything = bag1.union(bag2) ;
+        displayBag(everything);
+	*/
 
         // Testing intersection method : John
 
