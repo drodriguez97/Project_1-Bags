@@ -198,7 +198,7 @@ public class ResizeableArrayBag<T> implements BagInterface<T> {
     @Override
     public BagInterface<T> union(BagInterface<T> otherBag) {
         // create union bag //
-        BagInterface<T> bagUnion = new ResizeableArrayBag<>() ;
+        BagInterface<T> result = new ResizeableArrayBag<>() ;
 
        // declare the two bags that will union //
         int count ; 
@@ -255,13 +255,13 @@ public class ResizeableArrayBag<T> implements BagInterface<T> {
     public BagInterface<T> difference(BagInterface<T> otherBag) {
         BagInterface<T> result = new ResizeableArrayBag<>();
         T[] mine = this.toArray();
-        for (T elem : mine) {
-            result.add(elem);
+        for (T element : mine) {
+            result.add(element);
         }
         T[] others = otherBag.toArray();
-        for (T elem : others) {
-            if (result.contains(elem)) {
-                result.remove(elem);
+        for (T element : others) {
+            if (result.contains(element)) {
+                result.remove(element);
             }
         }
         return result;
