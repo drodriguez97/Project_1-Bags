@@ -54,8 +54,20 @@ public class LinkedBagTest { // Question: LinkedBagTest will implement BagInterf
         displayBag(commonItems);
 
         // Testing difference method : Daniel
+        BagInterface < String > bag1 = new LinkedBag < >();
+        BagInterface < String > bag2 = new LinkedBag < >();
         
-    
+        bag1.add("d");
+        bag1.add("f");
+        bag1.add("g");
+        bag1.add("h");
+
+        bag2.add("j");
+        bag2.add("h");
+        bag2.add("d");
+        bag2.add("l");
+        
+        System.out.println(Arrays.toString(bag1.difference(bag2).toArray()));
 
     }
 
