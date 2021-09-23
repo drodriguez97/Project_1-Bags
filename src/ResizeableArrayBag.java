@@ -207,12 +207,12 @@ public class ResizeableArrayBag<T> implements BagInterface<T> {
 
         // union of first bag "bagTs"
         for(count = 0 ; count < numberOfItems ; count++)
-            bagUnion.add(bagTs[count]) ;
+            result.add(bagTs[count]) ;
         //union of second bag "otherBag" //
         for(count = 0 ; count < otherBag.getCurrentSize() ; count++)
-            bagUnion.add(bagOther[count]) ;
+            result.add(bagOther[count]) ;
 
-        return bagUnion;
+        return result;
     }
 
     /**
