@@ -212,7 +212,7 @@ public class ResizeableArrayBag<T> implements BagInterface<T> {
         for(count = 0 ; count < otherBag.getCurrentSize() ; count++)
             result.add(bagOther[count]) ;
 
-        return bagUnion;
+        return result;
     }
 
     /**
