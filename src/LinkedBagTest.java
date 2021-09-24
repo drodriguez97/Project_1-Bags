@@ -12,8 +12,8 @@ public class LinkedBagTest { // Question: LinkedBagTest will implement BagInterf
         // Testing union method : Priscilla
        
        // creat two bags //
-        BagInterface bag1 = new LinkedBagTest(a);
-        BagInterface bag2 = new LinkedBagTest(b);
+        BagInterface<String> bag1 = new LinkedBagTest<>();
+        BagInterface<String> bag2 = new LinkedBagTest<>();
         
        // add items to bag 
         bag1.add("a");
