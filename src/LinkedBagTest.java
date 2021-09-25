@@ -10,12 +10,14 @@ public class LinkedBagTest { // Question: LinkedBagTest will implement BagInterf
     public static void main(String[] args) {
 
         // Testing union method : Priscilla
-       
-       // creat two bags //
-        BagInterface<String> bag1 = new LinkedBagTest<>();
-        BagInterface<String> bag2 = new LinkedBagTest<>();
+
+        /*
+
+        // creat two bags //
+        BagInterface<String> bag1 = new LinkedBag<>();
+        BagInterface<String> bag2 = new LinkedBag<>();
         
-       // add items to bag 
+        // add items to bag 
         bag1.add("a");
         bag1.add("b");
         bag1.add("c");
@@ -24,11 +26,16 @@ public class LinkedBagTest { // Question: LinkedBagTest will implement BagInterf
         bag2.add("b");
         bag2.add("d");
         bag2.add("e");
-    // union of bag 1 and bag 2 and display union bag //
-    BagInterface<String> everything = bag1.union(bag2) ;
-    displayBag(everything);
+
+        // union of bag 1 and bag 2 and display union bag //
+        BagInterface<String> everything = bag1.union(bag2) ;
+        displayBag(everything);
+
+        */
 
         // Testing intersection method : John
+
+        /*
 
         BagInterface<String> interBag1 = new LinkedBag<>();
         BagInterface<String> interBag2 = new LinkedBag<>();
@@ -53,22 +60,29 @@ public class LinkedBagTest { // Question: LinkedBagTest will implement BagInterf
         
         displayBag(commonItems);
 
+        */
+
         // Testing difference method : Daniel
-        BagInterface < String > bag1 = new LinkedBag < >();
-        BagInterface < String > bag2 = new LinkedBag < >();
+        BagInterface<String> diffBag1 = new LinkedBag<>();
+        BagInterface<String> diffBag2 = new LinkedBag<>();
         
-        bag1.add("d");
-        bag1.add("f");
-        bag1.add("g");
-        bag1.add("h");
+        diffBag1.add("a");
+        diffBag1.add("b");
+        diffBag1.add("c");
 
-        bag2.add("j");
-        bag2.add("h");
-        bag2.add("d");
-        bag2.add("l");
+        diffBag2.add("b");
+        diffBag2.add("b");
+        diffBag2.add("d");
+        diffBag2.add("e");
+
+        BagInterface<String> leftOver1 = diffBag1.difference(diffBag2);
+
+        displayBag(leftOver1);
+
+        BagInterface<String> leftOver2 = diffBag2.difference(diffBag1);
+
+        displayBag(leftOver2);
         
-        System.out.println(Arrays.toString(bag1.difference(bag2).toArray()));
-
     }
 
     // Tests the method toArray while displaying the bag.
