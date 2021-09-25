@@ -45,14 +45,25 @@ public interface BagInterface<T>
                 Note: If the bag is empty, the returned array is empty. */ 
    public T[] toArray();
 
-   /** To-do: Create union method */
+    /**
+     * Creates a new bag with the combined contents of both bags into a new bag.
+     * @param otherBag The bag that will be combined with the bag that called the method.
+     * @return A new bag that is the union of both bags.
+     */    
     public BagInterface<T> union(BagInterface<T> otherBag);
 
-   /** To-do: Create intersection method */
-    //public T intersection(T bagIntersection);
+    /**
+     * Creates a new bag that contains the intersection of both bags.
+     * @param otherBag The bag that will be checked for intersecting elements.
+     * @return A new bag that is the intersection of both bags.
+     */
     public BagInterface<T> intersection(BagInterface<T> otherBag);
 
-   /** To-do: Create difference method */
+    /**
+     * Creates a new bag that contains the difference of both bags.
+     * @param otherBag The bag that will be compared for differences.
+     * @return A new bag that is the difference of both bags.
+     */
     public BagInterface<T> difference(BagInterface<T> otherBag);
 
 
