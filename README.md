@@ -26,7 +26,7 @@ LinkedBagTest.java (to test the three task methods) - (All members)
 
 Big O notation (for each method, in best case and worst case, with explanations) - (Name goes here)
 
-Javadoc Comments (with generated Javadoc folder, and subfolders) - (Name goes here)
+Javadoc Comments (with generated Javadoc folder, and subfolders) - (John)
     => Will submit link to Javadoc's start page (index.html)
 
 Screencast going over your code - (Daniel, John, Priscilla)
