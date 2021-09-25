@@ -186,7 +186,7 @@ public class LinkedBag<T> implements BagInterface<T> {
     public BagInterface<T> union(BagInterface<T> otherBag) {
       
        // create the union bag //
-       BagInterface<T> bagUnion = new LinkedBag<>() ;    
+       BagInterface<T> result = new LinkedBag<>() ;    
        
         // declare the two bags which will union//
         int count ;                                                    
@@ -195,13 +195,13 @@ public class LinkedBag<T> implements BagInterface<T> {
         
         // move first "bagTs" bag to union bag //
         for(count = 0 ; count < numEntries ; count++)                     
-             bagUnion.add(bagTs[count]) ;
+             result.add(bagTs[count]) ;
         
         // move second bag "bagOther" to union bag //
         for(count = 0 ; count < otherBag.getCurrentSize() ; count++)
-            bagUnion.add(bagOther[count]) ;
+            result.add(bagOther[count]) ;
     
-        return bagUnion;
+        return result;
         
     }
     
