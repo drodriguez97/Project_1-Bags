@@ -14,9 +14,7 @@ LinkedBag.java (without three task methods) - (John)
 
 union method for both ResizeableArrayBag.java and LinkedBag.java - (Priscilla)
 
-intersection method<br />
-    for ResizeableArrayBag.java (John) <br />
-    for LinkedBag.java (Md Islam)
+intersection method for both ResizeableArrayBag.java and LinkedBag.java - (John)
 
 difference method for both ResizeableArrayBag.java and LinkedBag.java - (Daniel)
 
