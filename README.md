@@ -1,10 +1,10 @@
 # Project_1-Bags
-CS 2400 Project 1 - Bags John, Daniel, Priscilla
+[CS 2400 Project 1 - Bags]
 
-(Temporary)
-To-do:
+# i) John Salinas, Daniel Rodriguez, Priscilla Ballesteros
 
-# Essential
+
+# ii) Member Contributions
 
 Added three methods (Unio,intersection,and difference) to BagInterface - (John)
 
@@ -22,13 +22,21 @@ ArrayBagTest.java (to test the three task methods) (All members)
 
 LinkedBagTest.java (to test the three task methods) - (All members)
 
-Big O notation (for each method, in best case and worst case, with explanations) - (Name goes here)
+Big O notation (for each method, in best case and worst case, with explanations) - (All members)
 
 Javadoc Comments (with generated Javadoc folder, and subfolders) - (John)
     => Will submit link to Javadoc's start page (index.html)
 
 Screencast going over your code - (Daniel, John, Priscilla)
 
-# Extra Credit
+# iii) Extra Features
 
-Write test cases, using a unit test framework (+10 pts) - ( )
+(Extra Credit) Write test cases, using a unit test framework (+10 pts) - (John)
+
+# iv) Link to screencast
+
+Link:
+
+# v) Link to Javadoc's start page (index.html)
+
+Link to start page: 
