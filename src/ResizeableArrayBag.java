@@ -1,3 +1,9 @@
+/*
+    Client program meant to test the three methods 
+    (union, intersection,and difference) for the 
+    class ResizeableArrayBag
+ */
+
 import java.util.*;
 
 public class ResizeableArrayBag<T> implements BagInterface<T> {
@@ -238,9 +244,14 @@ public class ResizeableArrayBag<T> implements BagInterface<T> {
     public BagInterface<T> intersection(BagInterface<T> otherBag) {
         BagInterface<T> result = new ResizeableArrayBag<>();
 
-        if (this.getCurrentSize() == 0 || otherBag.getCurrentSize() == 0) {
+        if (this.getCurrentSize() == 0 && otherBag.getCurrentSize() == 0) {
             return null;
+        } else if (this.getCurrentSize() == 0) {
+            return otherBag;
+        } else if (otherBag.getCurrentSize() == 0) {
+            return this;
         }
+        
 
         T[] leftArray = this.toArray();
         T[] rightArray = otherBag.toArray();
@@ -290,6 +301,5 @@ public class ResizeableArrayBag<T> implements BagInterface<T> {
             throw new SecurityException("ArrayBag object if corrupt");
         }
     }
-
 
 }
