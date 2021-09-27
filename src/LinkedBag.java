@@ -244,9 +244,22 @@ public class LinkedBag<T> implements BagInterface<T> {
      * @param otherBag The bag that will be compared for differences.
      * @return BagInterface<T> A new bag that is the difference of both bags.
      */
+    
     @Override
-    public BagInterface<T> difference(BagInterface<T> otherBag) {
-        
+    public BagInterface < T > difference(BagInterface < T > otherBag) {
+       BagInterface < T > result = new LinkedBag < >();
+   T[] mine = this.toArray();
+   for (T element : mine) {
+   result.add(element);
+   }
+   T[] others = otherBag.toArray();
+   for (T element : others) {
+   if(result.contains(element)){
+       result.remove(element);
+   }
+   }
+   return result;
+}    
 
         return null;
     }
